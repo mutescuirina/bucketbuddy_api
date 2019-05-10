@@ -27,5 +27,5 @@ const adventuresController = require('./controllers/adventures.js')
 app.use('/adventures', adventuresController)
 
 
-  app.listen(PORT, () =>{ 
-   console.log('bucketbuddy listen on ', PORT)})
+app.listen(PORT, () =>{ 
+console.log('bucketbuddy listen on ', PORT)})

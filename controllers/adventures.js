@@ -4,7 +4,7 @@ const adventures = express.Router()
 const Adventure = require('../models/adventuresmodels.js')
 //...farther down the page
 
-
+// Index Route
 adventures.get('/', (req, res) => {
     Adventure.find({}, (err, foundAdventures) => {
         if (err) {
@@ -13,8 +13,10 @@ adventures.get('/', (req, res) => {
         res.status(200).json(foundAdventures)
       })
   })
-  
 
+  
+  
+// Create Route
 
   adventures.post('/', async (req, res) => {
    Adventure.create(req.body, (error, createdAdventure) => {
