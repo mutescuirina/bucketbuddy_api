@@ -4,10 +4,14 @@ const adventures = express.Router()
 const Adventure = require('../models/adventuresmodels.js')
 //...farther down the page
 
+<<<<<<< HEAD
 
 
 
 //Seed Route
+=======
+// Seed Route
+>>>>>>> 12fc98f1c75f9b234f74855a0238ddb370717ad6
 // const newAdventure = require('../models/seed.js')
 // adventures.get('/seed', (req, res) => {
 //   Adventure.create(newAdventure, (err, seedItems)=> {

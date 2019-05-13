@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express ();
-const PORT = 3003;
+const PORT = process.env.PORT || 3003;
 const mongoose = require('mongoose')
-const MONGODB_URI = 'mongodb://localhost:27017'+ '/adventures'
+const MONGODB_URI =  process.env.MONGODB_URI || 'mongodb://localhost:27017'+ '/adventures'
 
 // middleware
 app.use(express.json()); //use .json(), not .urlencoded()
