@@ -23,6 +23,9 @@ app.get('/' , (req, res) => {
   });
 
   // Controllers/Routes
+  const cors = require('cors')
+  app.use(cors())
+
 const adventuresController = require('./controllers/adventures.js')
 app.use('/adventures', adventuresController)
 
