@@ -5,13 +5,12 @@ const Adventure = require('../models/adventuresmodels.js')
 //...farther down the page
 
 //Seed Route
-const newAdventure = require('../models/seed.js')
-adventures.get('/seed', (req, res) => {
-  Adventure.create(newAdventure, (err, seedItems)=> {
-       res.send(seedItems)
-   })
- })
-
+// const newAdventure = require('../models/seed.js')
+// adventures.get('/seed', (req, res) => {
+//   Adventure.create(newAdventure, (err, seedItems)=> {
+//        res.send(seedItems)
+//    })
+//  })
 
 //Index Route
 adventures.get('/', (req, res) => {
