@@ -50,6 +50,7 @@ adventures.put('/:id', (req, res) => {
 
 //Create Route
   adventures.post('/', async (req, res) => {
+    console.log('hi')
    Adventure.create(req.body, (error, createdAdventure) => {
       if (error) {
         res.status(400).json({ error: error.message })
