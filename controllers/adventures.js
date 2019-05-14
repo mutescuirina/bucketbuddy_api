@@ -4,6 +4,7 @@ const adventures = express.Router()
 const Adventure = require('../models/adventuresmodels.js')
 //...farther down the page
 
+
 // Seed Route
 // const newAdventure = require('../models/seed.js')
 // adventures.get('/seed', (req, res) => {
@@ -22,6 +23,8 @@ adventures.get('/', (req, res) => {
         res.status(200).json(foundAdventures)
       })
   })
+
+
   
 //Delete Route
 adventures.delete('/:id', (req, res) => {
@@ -48,12 +51,23 @@ adventures.put('/:id', (req, res) => {
 })
 
 
+  
+  
+// Create Route
+
 //Create Route
   adventures.post('/', async (req, res) => {
+    console.log('hi')
+    if (!req.body.img) {
+      console.log("in the if statement")
+      req.body.img = 'http://saveabandonedbabies.org/wp-content/uploads/2015/08/default.png'
+    }  
    Adventure.create(req.body, (error, createdAdventure) => {
-      if (error) {
+     console.log(req.body)
+    if (error) {
         res.status(400).json({ error: error.message })
       }
+      console.log(createdAdventure)
       res.status(200).send(createdAdventure) //  .json() will send proper headers in response so client knows it's json coming back
     })
   })
