@@ -28,15 +28,15 @@ mongoose.connection.once('open', ()=>{
     console.log('connected to mongoose...')
 })
 
-//Populating seed Data
-app.get('/seed', async (req, res) => {
-  try {
-    const seedAdventures = await Adventure.create(newAdventures)
-    res.send(seedAdventures)
-  } catch (err) {
-    res.send(err.message)
-  }
-})
+// //Populating seed Data
+// app.get('/seed', async (req, res) => {
+//   try {
+//     const seedAdventures = await Adventure.create(newAdventures)
+//     res.send(seedAdventures)
+//   } catch (err) {
+//     res.send(err.message)
+//   }
+// })
 
 app.get('/' , (req, res) => {
     res.send ('hello world');
